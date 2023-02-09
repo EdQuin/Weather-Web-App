@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { Title, MainPC, MainAN } from './styles';
+import { SearchForm } from './App_2';
 
 function App() {
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  )
+
+  useEffect(() => {
+    window.matchMedia("(min-width: 768px)")
+      .addEventListener('change', e => setMatches(e.matches));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      {matches && (
+        <MainPC>
+          <Title>What's the weather like?</Title>
+          <SearchForm />
+        </MainPC>
+      )}
+      
+      {!matches && (/*Este código permite ser responsive, porém não está a ser utilizado de forma eficiente */
+        <MainAN>
+          <Title>What's the</Title>
+          <Title>weather like?</Title>
+          <SearchForm />
+        </MainAN>
+      )}
     </div>
+
   );
 }
-
+/*
+ */
 export default App;
