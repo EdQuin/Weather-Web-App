@@ -13,7 +13,7 @@ export function SearchForm() {
 
 
     useEffect(() => {
-
+            //Api for weather
         fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + searchCity + "&limit=1&appid=")
             .then((response) => {
                 if (!response.ok) {
