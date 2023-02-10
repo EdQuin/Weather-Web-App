@@ -14,7 +14,7 @@ export function SearchForm() {
 
     useEffect(() => {
 
-        fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + searchCity + "&limit=1&appid=47630c2bc2d73b21e6c0ec1ac37aeb2e")
+        fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + searchCity + "&limit=1&appid=")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(
@@ -34,7 +34,7 @@ export function SearchForm() {
     }, [searchCity])
 
     useEffect(() => {
-        fetch("https://api.openweathermap.org/data/3.0/onecall?lat=" + cityInfo[0].lat + "&lon=" + cityInfo[0].lon + "&units=metric&appid=47630c2bc2d73b21e6c0ec1ac37aeb2e")
+        fetch("https://api.openweathermap.org/data/3.0/onecall?lat=" + cityInfo[0].lat + "&lon=" + cityInfo[0].lon + "&units=metric&appid=")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(
