@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Weather Web App
+
+This is a work in progress. This project it´s a responsive web app that gives the current weather in a selected city
+
+![weather_app_pic](https://user-images.githubusercontent.com/86082190/218245941-045afde9-822f-4a3a-95cd-1c87f9820977.jpg)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
